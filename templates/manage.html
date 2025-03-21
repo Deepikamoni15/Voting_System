@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Manage Candidates</title>
+</head>
+<body>
+    <header>
+        <h1>Manage Candidates</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Candidate Name" required>
+            <button type="submit" name="action" value="add">Add Candidate</button>
+            <button type="submit" name="action" value="delete">Delete Candidate</button>
+        </form>
+        <ul>
+            {% for candidate in candidates %}
+                <li>{{ candidate.name }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Voting</a>
+    </main>
+</body>
+</html>

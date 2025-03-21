@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Voting Results</title>
+</head>
+<body>
+    <header>
+        <h1>Voting Results</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Candidate</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for candidate in results %}
+                    <tr>
+                        <td>{{ candidate.name }}</td>
+                        <td>{{ candidate.vote_count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/">Back to Voting</a>
+    </main>
+</body>
+</html>

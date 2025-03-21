@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="static/scripts.js" defer></script>
+    <title>Voting System</title>
+</head>
+<body>
+    <header>
+        <h1>Vote for Your Favorite Candidate</h1>
+    </header>
+    <main>
+        <div class="candidates">
+            {% for candidate in candidates %}
+                <button class="vote-button" data-candidate="{{ candidate.id }}">{{ candidate.name }}</button>
+            {% endfor %}
+        </div>
+        <p id="message"></p>
+    </main>
+    <footer>
+        <a href="/results">View Results</a> | <a href="/manage">Manage Candidates</a>
+    </footer>
+</body>
+</html>
